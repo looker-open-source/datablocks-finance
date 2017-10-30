@@ -1,5 +1,5 @@
 # Contains Historical Forex Dates Up To 2017-09-17
-view: sf_forex {
+view: sf_finance_forex {
   sql_table_name: exchangerate.forex ;;
 
   dimension_group: exchange {
