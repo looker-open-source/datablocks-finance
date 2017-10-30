@@ -1,4 +1,4 @@
-view: bq_forex_real {
+view: sf_forex_real {
   sql_table_name: exchangerate.forex_real ;;
 
   dimension: aud {

@@ -1,4 +1,4 @@
-view: bq_financial_indicators_all{
+view: sf_financial_indicators_all{
   sql_table_name: finance.FRED_data ;;
 
   dimension: primary_key {

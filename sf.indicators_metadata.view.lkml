@@ -1,4 +1,4 @@
-view: bq_indicators_metadata {
+view: sf_indicators_metadata {
   sql_table_name: finance.FRED_metadata ;;
 
   dimension: id {

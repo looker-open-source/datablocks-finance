@@ -1,10 +1,10 @@
-view: bq_financial_indicators {
+view: sf_financial_indicators {
   derived_table: {
     sql_trigger_value: select count(*) ;;
     sql:
       SELECT *
       , lag(date) OVER(partition by dataset_code order by date asc) as next_indicator_date
-      from `lookerdata.finance.FRED_data`
+      from finance.FRED_data
       where dataset_code in ('GDP', 'GDPC1', 'GDPPOT','CPIAUCSL', 'CPILFESL', 'GDPDEF', 'BASE','M1', 'M2', 'M1V', 'M2V', 'DFF','DTB3','DGS5','DGS10','DGS30','T5YIE','T10YIE','T5YIFR','TEDRATE','DPRIME', 'UNRATE','NROU','NROUST','CIVPART','EMRATIO','UNEMPLOY','PAYEMS','MANEMP','ICSA','IC4WSA', 'MEHOINUSA672N','DSPIC96','PCE','PCEDG','PSAVERT','RRSFS','DSPI', 'INDPRO','TCU','HOUST','GPDI','CP','STLFSI','DCOILWTICO','USSLIND','DTWEXM','DTWEXB', 'GFDEBTN','GFDEGDQ188S','EXCSRESNW','TOTCI');;
   }
 

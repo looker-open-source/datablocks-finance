@@ -1,4 +1,4 @@
-view: bq_indicator_yoy_facts {
+view: sf_indicator_yoy_facts {
   derived_table: {
     sql_trigger_value: select count(*) ;;
     sql:
@@ -10,7 +10,7 @@ view: bq_indicator_yoy_facts {
       (
         select *,
         rank() over (partition by dataset_code, EXTRACT(YEAR FROM CAST(date AS TIMESTAMP)) ORDER BY date asc) as row_number
-        from `lookerdata.finance.FRED_data`
+        from finance.FRED_data
       )
       where dataset_code in ('GDP', 'GDPC1', 'GDPPOT','CPIAUCSL', 'CPILFESL', 'GDPDEF', 'BASE','M1', 'M2', 'M1V', 'M2V', 'DFF','DTB3','DGS5','DGS10','DGS30','T5YIE','T10YIE','T5YIFR','TEDRATE','DPRIME', 'UNRATE','NROU','NROUST','CIVPART','EMRATIO','UNEMPLOY','PAYEMS','MANEMP','ICSA','IC4WSA', 'MEHOINUSA672N','DSPIC96','PCE','PCEDG','PSAVERT','RRSFS','DSPI', 'INDPRO','TCU','HOUST','GPDI','CP','STLFSI','DCOILWTICO','USSLIND','DTWEXM','DTWEXB', 'GFDEBTN','GFDEGDQ188S','EXCSRESNW','TOTCI')
       and row_number = 1
