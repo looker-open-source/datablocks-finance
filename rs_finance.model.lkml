@@ -1,3 +1,3 @@
 connection: "datablocks_spectrum"
 
-# include: "rs.explore"
+include: "rs.finance.explore"

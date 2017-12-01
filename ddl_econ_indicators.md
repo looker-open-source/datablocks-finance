@@ -6,9 +6,9 @@ Note: *The following DDL statments follow Redshift syntax. You may need to adjus
 
 ```
 CREATE external TABLE datablocks_spectrum.FRED_data(
-   dataset_code VARCHAR(25) NOT NULL
-  ,date             DATE  NOT NULL
-  ,value             NUMERIC(18,2) NOT NULL
+   dataset_code     VARCHAR(25)
+  ,date             DATE
+  ,value            NUMERIC(18,2)
 )
 row format delimited
 fields terminated by ','
@@ -18,11 +18,11 @@ location 's3://looker-datablocks/finance/FRED_data/';
 
 ```
 CREATE external TABLE FRED_metadata(
-   id                    DATE  NOT NULL
-  ,dataset_code          VARCHAR(25) NOT NULL
-  ,database_code         VARCHAR(4) NOT NULL
-  ,name                  VARCHAR(150) NOT NULL
-  ,description           VARCHAR(1000) NOT NULL
+   id                    DATE
+  ,dataset_code          VARCHAR(25)
+  ,database_code         VARCHAR(4)
+  ,name                  VARCHAR(150)
+  ,description           VARCHAR(1000)
   ,refreshed_at          VARCHAR(23)
   ,newest_available_date DATE
   ,oldest_available_date DATE
@@ -40,8 +40,8 @@ location 's3://looker-datablocks/finance/FRED_metadata/';
 
 ```
 CREATE external TABLE FRED_metadata_codes(
-   dataset_code VARCHAR(30) NOT NULL
-  ,description  VARCHAR(1000) NOT NULL
+   dataset_code VARCHAR(30)
+  ,description  VARCHAR(1000)
 )
 row format delimited
 fields terminated by ','
