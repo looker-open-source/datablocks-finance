@@ -1,9 +1,9 @@
 view: rs_financial_indicators {
   derived_table: {
-    # sql_trigger_value: select count(*) ;;
-    # distribution: "dataset_code"
+    sql_trigger_value: select count(*) ;;
+    distribution: "dataset_code"
     # distribution_style: even
-    # indexes: ["dataset_code", "date"]
+    indexes: ["dataset_code", "date"]
     sql:
       SELECT *
       , lag(date) OVER(partition by dataset_code order by date asc) as next_indicator_date
@@ -15,7 +15,7 @@ view: rs_financial_indicators {
     type: string
     primary_key: yes
     hidden: yes
-    sql:  ${dataset_code} ||  CAST(${TABLE}.date AS VARCHAR);;
+    sql:  ${dataset_code} ||CAST(${TABLE}.date AS VARCHAR);;
   }
 
   dimension: dataset_code {

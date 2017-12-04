@@ -1,9 +1,9 @@
 view: rs_indicator_yoy_facts {
   derived_table: {
-    # sql_trigger_value: select count(*) ;;
-    # distribution: "dataset_code"
+    sql_trigger_value: select count(*) ;;
+    distribution: "dataset_code"
     # distribution_style: "even"
-    # indexes: ["dataset_code", "date"]
+    indexes: ["dataset_code", "date"]
     sql:
       select dataset_code
       , date
