@@ -1,4 +1,4 @@
-include: "sf.*.view*"
+include: "snowflake.*.view*"
 
 explore: sf_financial_indicators {
   view_label: "Indicator"

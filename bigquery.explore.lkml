@@ -1,4 +1,4 @@
-include: "bq.*.view*"
+include: "bigquery.*.view*"
 
 explore: bq_financial_indicators {
   view_label: "Indicator"

@@ -1,4 +1,4 @@
-include: "rs.*.view*"
+include: "redshift.*.view*"
 
 explore: rs_financial_indicators {
   view_label: "Indicator"
